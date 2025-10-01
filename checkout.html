@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MONACO DETAILING</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .checkout-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .checkout-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-green);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary-green);
+        }
+        
+        .payment-method.selected {
+            border-color: var(--primary-green);
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .order-summary {
+            position: sticky;
+            top: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-total {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        
+        .promo-code {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .promo-code input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .place-order-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">MD</div>
+                    <div class="logo-text">
+                        <span class="logo-main">MONACO</span>
+                        <span class="logo-sub">DETAILING</span>
+                    </div>
+                </a>
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                    </div>
+                    <div class="progress-step active">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Checkout</span>
+                    </div>
+                    <div class="progress-step">
+                        <i class="fas fa-check"></i>
+                        <span>Confirmación</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <section class="checkout-section">
+            <h2 class="checkout-title">Información de Envío</h2>
+            <form id="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Dirección</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Código Postal</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                </div>
+                
+                <h2 class="checkout-title">Método de Pago</h2>
+                <div class="payment-methods">
+                    <div class="payment-method selected" data-method="card">
+                        <i class="fas fa-credit-card fa-2x"></i>
+                        <p>Tarjeta de Crédito</p>
+                    </div>
+                    <div class="payment-method" data-method="paypal">
+                        <i class="fab fa-paypal fa-2x"></i>
+                        <p>PayPal</p>
+                    </div>
+                </div>
+                
+                <div id="card-payment">
+                    <div class="form-group">
+                        <label for="cardNumber">Número de Tarjeta</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Fecha de Vencimiento</label>
+                            <input type="text" id="expiry" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="saveInfo" name="saveInfo">
+                        Guardar información para próximos pedidos
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <section class="checkout-section order-summary">
+            <h2 class="checkout-title">Resumen del Pedido</h2>
+            <div id="order-items">
+                <!-- Order items will be loaded here -->
+            </div>
+            
+            <div class="promo-code">
+                <input type="text" id="promoCode" placeholder="Código de descuento">
+                <button type="button" class="btn" id="applyPromo">Aplicar</button>
+            </div>
+            
+            <div class="order-summary-details">
+                <div class="order-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Envío</span>
+                    <span id="shipping">$0.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Impuestos</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="order-item" id="discount-row" style="display: none;">
+                    <span>Descuento</span>
+                    <span id="discount">-$0.00</span>
+                </div>
+                <div class="order-total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+            
+            <button type="submit" form="checkout-form" class="place-order-btn">
+                Realizar Pedido
+            </button>
+        </section>
+    </main>
+
+    <script>
+        // Load cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('monacoCart')) || [];
+        
+        // Calculate totals
+        function calculateTotals() {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const shipping = subtotal > 100 ? 0 : 10;
+            const tax = subtotal * 0.21;
+            const discount = 0; // Calculate discount if promo code applied
+            const total = subtotal + shipping + tax - discount;
+            
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').textContent = shipping === 0 ? 'Gratis' : `$${shipping.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+            
+            if (discount > 0) {
+                document.getElementById('discount-row').style.display = 'flex';
+                document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
+            }
+        }
+        
+        // Render order items
+        function renderOrderItems() {
+            const orderItems = document.getElementById('order-items');
+            orderItems.innerHTML = '';
+            
+            cart.forEach(item => {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'order-item';
+                orderItem.innerHTML = `
+                    <div>
+                        <strong>${item.name}</strong>
+                        <br>
+                        <small>Cantidad: ${item.quantity}</small>
+                    </div>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                orderItems.appendChild(orderItem);
+            });
+        }
+        
+        // Payment method selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', () => {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+                method.classList.add('selected');
+                
+                const selectedMethod = method.getAttribute('data-method');
+                if (selectedMethod === 'card') {
+                    document.getElementById('card-payment').style.display = 'block';
+                } else {
+                    document.getElementById('card-payment').style.display = 'none';
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would process the payment here
+            alert('¡Pedido realizado con éxito! Serás redirigido a la página de confirmación.');
+            
+            // Clear cart
+            localStorage.removeItem('monacoCart');
+            
+            // Redirect to confirmation page
+            window.location.href = 'order-confirmation.html';
+        });
+        
+        // Initialize
+        renderOrderItems();
+        calculateTotals();
+    </script>
+</body>
+</html>
