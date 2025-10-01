@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONACO DETAILING - Productos Premium para tu Vehículo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="MONACO DETAILING - Productos premium para el cuidado profesional de tu vehículo">
+    <meta name="keywords" content="detailing, cera, limpiador, accesorios, coche, vehículo">
+    <meta name="author" content="MONACO DETAILING">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://monaco-detailing.com/">
+    <meta property="og:title" content="MONACO DETAILING - Productos Premium para tu Vehículo">
+    <meta property="og:description" content="Descubre nuestra exclusiva línea de productos de detailing profesional">
+    <meta property="og:image" content="https://monaco-detailing.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://monaco-detailing.com/">
+    <meta property="twitter:title" content="MONACO DETAILING - Productos Premium para tu Vehículo">
+    <meta property="twitter:description" content="Descubre nuestra exclusiva línea de productos de detailing profesional">
+    <meta property="twitter:image" content="https://monaco-detailing.com/images/og-image.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="#" class="logo">
+                    <div class="logo-icon">MD</div>
+                    <div class="logo-text">
+                        <span class="logo-main">MONACO</span>
+                        <span class="logo-sub">DETAILING</span>
+                    </div>
+                </a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos..." id="search-input">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="header-icons">
+                        <div class="header-icon" id="user-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="header-icon" id="wishlist-icon">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </div>
+                        <div class="header-icon" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">Productos</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-item" data-category="ceras">Ceras y Selladores</a>
+                            <a href="#" class="dropdown-item" data-category="limpiadores">Limpiadores</a>
+                            <a href="#" class="dropdown-item" data-category="accesorios">Accesorios</a>
+                            <a href="#" class="dropdown-item" data-category="kits">Kits Completos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#brands" class="nav-link">Marcas</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-item">Monaco Pro</a>
+                            <a href="#" class="dropdown-item">ShineMax</a>
+                            <a href="#" class="dropdown-item">AutoGloss</a>
+                            <a href="#" class="dropdown-item">DetailPro</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#offers" class="nav-link">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Productos Premium para el Cuidado de tu Vehículo</h1>
+                <p>Descubre nuestra exclusiva línea de productos de detailing profesional para mantener tu vehículo como nuevo</p>
+                <a href="#products" class="btn">Ver Productos</a>
+                <a href="#catalog" class="btn btn-outline">Catálogo Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Categorías Populares</h2>
+            <div class="category-grid" id="category-grid">
+                <!-- Categories will be loaded here with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="product-carousel" id="featured-carousel">
+                <!-- Featured products will be loaded here with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category-filter">Filtrar por:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">Todas las categorías</option>
+                        <option value="ceras">Ceras y Selladores</option>
+                        <option value="limpiadores">Limpiadores</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="kits">Kits Completos</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter">Ordenar por:</label>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="featured">Destacados</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre: A-Z</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+                
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded here with JavaScript -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be loaded here with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonial-carousel" id="testimonial-carousel">
+                <!-- Testimonials will be loaded here with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Suscríbete a Nuestro Newsletter</h2>
+            <p>Recibe ofertas exclusivas, novedades y consejos de detailing profesional directamente en tu correo</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                <button type="submit" class="newsletter-button">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Monaco Detailing</h3>
+                    <p>Productos premium para el cuidado profesional de tu vehículo. Calidad y resultados excepcionales en cada aplicación.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#offers">Ofertas</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorías</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-category="ceras">Ceras y Selladores</a></li>
+                        <li><a href="#" data-category="limpiadores">Limpiadores</a></li>
+                        <li><a href="#" data-category="accesorios">Accesorios</a></li>
+                        <li><a href="#" data-category="kits">Kits Completos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@monacodetailing.com</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Monaco Detailing. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Tu Carrito</h2>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here with JavaScript -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="cart-shipping">
+                    <span>Envío:</span>
+                    <span id="cart-shipping">Gratis</span>
+                </div>
+                <div class="cart-total-final">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="btn" id="checkout-btn" style="width: 100%;">Proceder al Pago</button>
+            <a href="#products" class="btn btn-outline" style="width: 100%; margin-top: 10px;">Seguir Comprando</a>
+        </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2 class="wishlist-title">Mi Lista de Deseos</h2>
+            <button class="close-wishlist" id="close-wishlist">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="wishlist-items" id="wishlist-items">
+            <!-- Wishlist items will be loaded here with JavaScript -->
+        </div>
+        
+        <div class="wishlist-footer">
+            <button class="btn" id="add-all-to-cart" style="width: 100%;">Añadir Todo al Carrito</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-image">
+                <img src="" alt="" id="modal-image">
+                <div class="modal-thumbnails" id="modal-thumbnails">
+                    <!-- Product thumbnails will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-info">
+                <p class="modal-category" id="modal-category"></p>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <div class="modal-rating" id="modal-rating">
+                    <!-- Rating will be loaded here -->
+                </div>
+                <p class="modal-price" id="modal-price"></p>
+                <p class="modal-description" id="modal-description"></p>
+                <div class="modal-features">
+                    <h3>Características:</h3>
+                    <ul id="modal-features">
+                        <!-- Features will be loaded here with JavaScript -->
+                    </ul>
+                </div>
+                <div class="modal-options">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decrease-quantity">-</button>
+                        <input type="number" class="quantity-input" id="modal-quantity" value="1" min="1">
+                        <button class="quantity-btn" id="increase-quantity">+</button>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn" id="add-to-cart-modal">
+                            <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                        </button>
+                        <button class="btn btn-outline" id="add-to-wishlist-modal">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="description">Descripción</button>
+                    <button class="tab-btn" data-tab="reviews">Reseñas</button>
+                    <button class="tab-btn" data-tab="shipping">Envío</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description-tab">
+                        <!-- Additional description content -->
+                    </div>
+                    <div class="tab-pane" id="reviews-tab">
+                        <!-- Reviews content -->
+                    </div>
+                    <div class="tab-pane" id="shipping-tab">
+                        <!-- Shipping information -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="close-modal" id="close-modal">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="quick-view-content">
+            <button class="close-quick-view" id="close-quick-view">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-body">
+                <!-- Quick view content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notification-toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-message">Producto añadido al carrito</span>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
