@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONACO DETAILING - Productos Premium para tu Vehículo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #27ae60;
+            --light-green: #a9dfbf;
+            --black: #2c3e50;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo-sub {
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 10px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 30px;
+            width: 250px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            background: none;
+            border: none;
+            color: var(--dark-gray);
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icon {
+            position: relative;
+            cursor: pointer;
+            color: var(--black);
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .header-icon:hover {
+            color: var(--primary-green);
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 20px;
+            color: var(--black);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/detailing/1600/600.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .category-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 60px 0;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-select {
+            padding: 8px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            background-color: var(--white);
+            outline: none;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--dark-gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-gray);
+            color: var(--black);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-icon:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Cart Section */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid var(--medium-gray);
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+        }
+
+        .newsletter-button {
+            padding: 15px 30px;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-button:hover {
+            background-color: var(--dark-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--medium-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-gray);
+            color: var(--light-gray);
+            font-size: 14px;
+        }
+
+        /* Product Modal */
+        .product-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 10px;
+            display: flex;
+            transform: scale(0.8);
+            transition: var(--transition);
+        }
+
+        .product-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .modal-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .modal-info {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-category {
+            color: var(--dark-gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .modal-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-features {
+            margin-bottom: 20px;
+        }
+
+        .modal-features h3 {
+            margin-bottom: 10px;
+        }
+
+        .modal-features ul {
+            padding-left: 20px;
+        }
+
+        .modal-features li {
+            margin-bottom: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border: none;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .modal-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar input {
+                width: 200px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-button {
+                border-radius: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="#" class="logo">
+                    <div class="logo-icon">MD</div>
+                    <div class="logo-text">
+                        <span class="logo-main">MONACO</span>
+                        <span class="logo-sub">DETAILING</span>
+                    </div>
+                </a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="header-icons">
+                        <div class="header-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="header-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="header-icon" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Productos</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-item">Ceras y Selladores</a>
+                            <a href="#" class="dropdown-item">Limpiadores</a>
+                            <a href="#" class="dropdown-item">Accesorios</a>
+                            <a href="#" class="dropdown-item">Kits Completos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Marcas</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-item">Monaco Pro</a>
+                            <a href="#" class="dropdown-item">ShineMax</a>
+                            <a href="#" class="dropdown-item">AutoGloss</a>
+                            <a href="#" class="dropdown-item">DetailPro</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Productos Premium para el Cuidado de tu Vehículo</h1>
+                <p>Descubre nuestra exclusiva línea de productos de detailing profesional para mantener tu vehículo como nuevo</p>
+                <a href="#products" class="btn">Ver Productos</a>
+                <a href="#" class="btn btn-outline">Catálogo Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Categorías Populares</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="category-name">Ceras y Selladores</h3>
+                    <p>Protección duradera y brillo excepcional</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-soap"></i>
+                    </div>
+                    <h3 class="category-name">Limpiadores</h3>
+                    <p>Limpieza profunda para cada superficie</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="category-name">Hidratantes</h3>
+                    <p>Restaura y protege plásticos y cueros</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="category-name">Accesorios</h3>
+                    <p>Herramientas profesionales para resultados perfectos</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3 class="category-name">Kits Completos</h3>
+                    <p>Soluciones todo en uno para cada necesidad</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="category-name">Productos Exclusivos</h3>
+                    <p>La línea premium de Monaco Detailing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category-filter">Filtrar por:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">Todas las categorías</option>
+                        <option value="ceras">Ceras y Selladores</option>
+                        <option value="limpiadores">Limpiadores</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="kits">Kits Completos</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter">Ordenar por:</label>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="featured">Destacados</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre: A-Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded here with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Suscríbete a Nuestro Newsletter</h2>
+            <p>Recibe ofertas exclusivas, novedades y consejos de detailing profesional directamente en tu correo</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico">
+                <button type="submit" class="newsletter-button">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Monaco Detailing</h3>
+                    <p>Productos premium para el cuidado profesional de tu vehículo. Calidad y resultados excepcionales en cada aplicación.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorías</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ceras y Selladores</a></li>
+                        <li><a href="#">Limpiadores</a></li>
+                        <li><a href="#">Hidratantes</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Kits Completos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@monacodetailing.com</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Monaco Detailing. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Tu Carrito</h2>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here with JavaScript -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%;">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-image">
+                <img src="" alt="" id="modal-image">
+            </div>
+            <div class="modal-info">
+                <p class="modal-category" id="modal-category"></p>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-price" id="modal-price"></p>
+                <p class="modal-description" id="modal-description"></p>
+                <div class="modal-features">
+                    <h3>Características:</h3>
+                    <ul id="modal-features">
+                        <!-- Features will be loaded here with JavaScript -->
+                    </ul>
+                </div>
+                <div class="modal-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decrease-quantity">-</button>
+                        <input type="number" class="quantity-input" id="modal-quantity" value="1" min="1">
+                        <button class="quantity-btn" id="increase-quantity">+</button>
+                    </div>
+                    <button class="btn" id="add-to-cart-modal">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <button class="close-modal" id="close-modal">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Cera Premium Monaco Pro",
+                category: "ceras",
+                price: 45.99,
+                image: "https://picsum.photos/seed/cera1/400/300.jpg",
+                badge: "Más Vendido",
+                description: "Cera de alta durabilidad con efecto hidrofóbico superior. Fórmula avanzada con polímeros de última generación que protegen la pintura contra rayos UV, contaminación ambiental y elementos corrosivos.",
+                features: [
+                    "Durabilidad hasta 6 meses",
+                    "Efecto hidrofóbico extremo",
+                    "Protección UV avanzada",
+                    "Acabado de alto brillo",
+                    "Fácil aplicación y retirada"
+                ]
+            },
+            {
+                id: 2,
+                name: "Limpiador de Interiores Multiusos",
+                category: "limpiadores",
+                price: 22.50,
+                image: "https://picsum.photos/seed/limpiador1/400/300.jpg",
+                badge: "Nuevo",
+                description: "Limpiador versátil para todas las superficies interiores del vehículo. Fórmula segura para plásticos, vinilo, tela y cuero. Elimina eficazmente la suciedad sin dejar residuos.",
+                features: [
+                    "Seguro para múltiples superficies",
+                    "Fragancia fresca y duradera",
+                    "No deja residuos grasos",
+                    "Fórmula antibacteriana",
+                    "Envase ecológico reciclable"
+                ]
+            },
+            {
+                id: 3,
+                name: "Sellador Cerámico 9H",
+                category: "ceras",
+                price: 89.99,
+                image: "https://picsum.photos/seed/ceramico1/400/300.jpg",
+                badge: "Premium",
+                description: "Protección cerámica de grado profesional con dureza 9H. Crea una capa protectora duradera que repele el agua, la suciedad y los contaminantes, manteniendo tu vehículo impecable por más tiempo.",
+                features: [
+                    "Dureza 9H certificada",
+                    "Protección hasta 2 años",
+                    "Efecto autolimpiante",
+                    "Resistencia a químicos y arañazos",
+                    "Brillo intenso y profundo"
+                ]
+            },
+            {
+                id: 4,
+                name: "Microfibra Premium 500g/m²",
+                category: "accesorios",
+                price: 15.99,
+                image: "https://picsum.photos/seed/microfibra1/400/300.jpg",
+                badge: null,
+                description: "Toalla de microfibra de ultra alta densidad para aplicación y retirada de productos de detailing. Suavidad excepcional que no araña las superficies más delicadas.",
+                features: [
+                    "Densidad de 500g/m²",
+                    "Borde de microfibra sin costuras",
+                    "Absorción superior",
+                    "Lavable y reutilizable",
+                    "Tamaño 40x40cm"
+                ]
+            },
+            {
+                id: 5,
+                name: "Kit Completo de Detailing Básico",
+                category: "kits",
+                price: 129.99,
+                image: "https://picsum.photos/seed/kit1/400/300.jpg",
+                badge: "Oferta -20%",
+                description: "Todo lo necesario para comenzar en el mundo del detailing profesional. Incluye los productos esenciales para mantener tu vehículo en perfectas condiciones por dentro y por fuera.",
+                features: [
+                    "Shampoo de pH neutro (500ml)",
+                    "Cera líquida (250ml)",
+                    "Limpiador de interiores (500ml)",
+                    "2 toallas de microfibra premium",
+                    "1 aplicador de cera",
+                    "Guía de uso detallada"
+                ]
+            },
+            {
+                id: 6,
+                name: "Hidratante de Cuero con Protector UV",
+                category: "limpiadores",
+                price: 34.99,
+                image: "https://picsum.photos/seed/cuero1/400/300.jpg",
+                badge: null,
+                description: "Tratamiento exclusivo para cueros que hidrata, nutre y protege. Fórmula enriquecida con aceites naturales y protectores UV que previenen el agrietamiento y decoloración.",
+                features: [
+                    "Protección UV avanzada",
+                    "Prevención de grietas y decoloración",
+                    "Aroma a cuero genuino",
+                    "No deja residuos grasos",
+                    "Adecuado para cueros naturales y sintéticos"
+                ]
+            },
+            {
+                id: 7,
+                name: "Limpiador de Llantas y Neumáticos",
+                category: "limpiadores",
+                price: 18.99,
+                image: "https://picsum.photos/seed/llantas1/400/300.jpg",
+                badge: null,
+                description: "Limpiador de alta eficacia para eliminar el polvo de freno y la suciedad incrustada en las llantas. Fórmula ácida balanceada segura para la mayoría de acabados de llantas.",
+                features: [
+                    "Eliminación efectiva de polvo de freno",
+                    "Seguro para llantas pintadas y cromadas",
+                    "No requiere cepillado intensivo",
+                    "Efecto disolvente visible",
+                    "Fácil enjuague"
+                ]
+            },
+            {
+                id: 8,
+                name: "Pulidora Orbital Dual Action",
+                category: "accesorios",
+                price: 189.99,
+                image: "https://picsum.photos/seed/pulidora1/400/300.jpg",
+                badge: "Profesional",
+                description: "Pulidora orbital de doble acción para corrección de pintura y aplicación de ceras. Movimiento aleatorio que previene hologramas y marcas de pulido.",
+                features: [
+                    "Motor de 900W con velocidad variable",
+                    "Movimiento orbital de 8mm",
+                    "Mango ergonómico antivibración",
+                    "Incluye 2 discos de espuma",
+                    "Ideal para principiantes y profesionales"
+                ]
+            },
+            {
+                id: 9,
+                name: "Kit de Cristales y Plásticos",
+                category: "kits",
+                price: 45.99,
+                image: "https://picsum.photos/seed/cristales1/400/300.jpg",
+                badge: null,
+                description: "Solución completa para la limpieza y protección de cristales y plásticos exteriores. Elimina residuos de películas y protege contra la lluvia.",
+                features: [
+                    "Limpiador de cristales anti-rayas (500ml)",
+                    "Repelente de lluvia para cristales (250ml)",
+                    "Restaurador de plásticos exteriores (250ml)",
+                    "2 toallas de microfibra para cristales",
+                    "1 aplicador de repelente"
+                ]
+            },
+            {
+                id: 10,
+                name: "Cera Sintética de Rápida Aplicación",
+                category: "ceras",
+                price: 32.99,
+                image: "https://picsum.photos/seed/cera2/400/300.jpg",
+                badge: null,
+                description: "Cera sintética de última generación con polímeros avanzados que proporcionan brillo duradero y protección hidrofóbica. Fórmula de fácil aplicación y retirada sin esfuerzo.",
+                features: [
+                    "Aplicación y retirada sin esfuerzo",
+                    "No deja residuos blancos",
+                    "Protección hasta 4 meses",
+                    "Compatible con todas las pinturas",
+                    "Ideal para mantenimiento regular"
+                ]
+            },
+            {
+                id: 11,
+                name: "Limpiador de Motor Degreaser Pro",
+                category: "limpiadores",
+                price: 24.99,
+                image: "https://picsum.photos/seed/motor1/400/300.jpg",
+                badge: null,
+                description: "Limpiador degresante profesional para motores. Fórmula potente que disuelve la grasa, el aceite y la suciedad acumulada sin dañar componentes eléctricos o plásticos.",
+                features: [
+                    "Disuelve grasa y aceite acumulado",
+                    "Seguro para componentes eléctricos",
+                    "Biodegradable y ecológico",
+                    "No requiere cepillado intensivo",
+                    "Deja un acabado limpio y seco"
+                ]
+            },
+            {
+                id: 12,
+                name: "Set de Cepillos de Detailing",
+                category: "accesorios",
+                price: 39.99,
+                image: "https://picsum.photos/seed/cepillos1/400/300.jpg",
+                badge: null,
+                description: "Set completo de cepillos especializados para cada área del vehículo. Cerdas suaves que no rayan pero limpian eficazmente las áreas más difíciles.",
+                features: [
+                    "5 cepillos de diferentes tamaños",
+                    "Cerdas de nylon suave y resistente",
+                    "Mangos ergonómicos antideslizantes",
+                    "Base de almacenamiento incluida",
+                    "Lavables y reutilizables"
+                ]
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        let currentProduct = null;
+
+        // DOM elements
+        const productGrid = document.getElementById('product-grid');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+        const categoryFilter = document.getElementById('category-filter');
+        const sortFilter = document.getElementById('sort-filter');
+        const productModal = document.getElementById('product-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalQuantity = document.getElementById('modal-quantity');
+        const decreaseQuantity = document.getElementById('decrease-quantity');
+        const increaseQuantity = document.getElementById('increase-quantity');
+        const addToCartModal = document.getElementById('add-to-cart-modal');
+
+        // Initialize the page
+        function init() {
+            renderProducts(products);
+            setupEventListeners();
+        }
+
+        // Render products
+        function renderProducts(productsToRender) {
+            productGrid.innerHTML = '';
+            
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">${getCategoryName(product.category)}</p>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <div class="product-actions">
+                            <button class="btn btn-small add-to-cart" data-id="${product.id}">Añadir</button>
+                            <button class="btn-icon view-product" data-id="${product.id}">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to new elements
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+            
+            document.querySelectorAll('.view-product').forEach(button => {
+                button.addEventListener('click', viewProduct);
+            });
+        }
+
+        // Get category name
+        function getCategoryName(category) {
+            const categories = {
+                'ceras': 'Ceras y Selladores',
+                'limpiadores': 'Limpiadores',
+                'accesorios': 'Accesorios',
+                'kits': 'Kits Completos'
+            };
+            return categories[category] || category;
+        }
+
+        // Add to cart
+        function addToCart(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const product = products.find(p => p.id === productId);
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification('Producto añadido al carrito');
+        }
+
+        // Update cart
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+            
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-name">${item.name}</h4>
+                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+                
+                total += item.price * item.quantity;
+                count += item.quantity;
+            });
+            
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            cartCount.textContent = count;
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', decreaseQuantity);
+            });
+            
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', increaseCartItemQuantity);
+            });
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const item = cart.find(item => item.id === productId);
+            
+            if (item.quantity > 1) {
+                item.quantity--;
+            } else {
+                cart = cart.filter(item => item.id !== productId);
+            }
+            
+            updateCart();
+        }
+
+        // Increase quantity
+        function increaseCartItemQuantity(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const item = cart.find(item => item.id === productId);
+            item.quantity++;
+            updateCart();
+        }
+
+        // View product details
+        function viewProduct(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            currentProduct = products.find(p => p.id === productId);
+            
+            if (currentProduct) {
+                document.getElementById('modal-image').src = currentProduct.image;
+                document.getElementById('modal-category').textContent = getCategoryName(currentProduct.category);
+                document.getElementById('modal-title').textContent = currentProduct.name;
+                document.getElementById('modal-price').textContent = `$${currentProduct.price.toFixed(2)}`;
+                document.getElementById('modal-description').textContent = currentProduct.description;
+                
+                const featuresList = document.getElementById('modal-features');
+                featuresList.innerHTML = '';
+                currentProduct.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                modalQuantity.value = 1;
+                productModal.classList.add('active');
+                overlay.classList.add('active');
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Cart toggle
+            cartIcon.addEventListener('click', () => {
+                cartSidebar.classList.add('active');
+                overlay.classList.add('active');
+            });
+            
+            closeCart.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+            // Product modal
+            closeModal.addEventListener('click', () => {
+                productModal.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+            // Quantity controls in modal
+            decreaseQuantity.addEventListener('click', () => {
+                if (modalQuantity.value > 1) {
+                    modalQuantity.value--;
+                }
+            });
+            
+            increaseQuantity.addEventListener('click', () => {
+                modalQuantity.value++;
+            });
+            
+            // Add to cart from modal
+            addToCartModal.addEventListener('click', () => {
+                if (currentProduct) {
+                    const quantity = parseInt(modalQuantity.value);
+                    const existingItem = cart.find(item => item.id === currentProduct.id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                    } else {
+                        cart.push({
+                            ...currentProduct,
+                            quantity: quantity
+                        });
+                    }
+                    
+                    updateCart();
+                    productModal.classList.remove('active');
+                    overlay.classList.remove('active');
+                    showNotification('Producto añadido al carrito');
+                }
+            });
+            
+            // Overlay click
+            overlay.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                productModal.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+            
+            // Category filter
+            categoryFilter.addEventListener('change', () => {
+                const category = categoryFilter.value;
+                let filteredProducts = category === 'all' 
+                    ? [...products] 
+                    : products.filter(p => p.category === category);
+                
+                // Apply current sort
+                applySorting(filteredProducts);
+                renderProducts(filteredProducts);
+            });
+            
+            // Sort filter
+            sortFilter.addEventListener('change', () => {
+                const category = categoryFilter.value;
+                let filteredProducts = category === 'all' 
+                    ? [...products] 
+                    : products.filter(p => p.category === category);
+                
+                applySorting(filteredProducts);
+                renderProducts(filteredProducts);
+            });
+            
+            // Newsletter form
+            document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                showNotification('¡Gracias por suscribirte a nuestro newsletter!');
+                e.target.reset();
+            });
+        }
+
+        // Apply sorting
+        function applySorting(productsArray) {
+            const sortValue = sortFilter.value;
+            
+            switch (sortValue) {
+                case 'price-low':
+                    productsArray.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    productsArray.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    productsArray.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'featured':
+                default:
+                    // Keep original order or implement featured logic
+                    break;
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--primary-green);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 5px;
+                box-shadow: var(--shadow);
+                z-index: 2000;
+                transform: translateY(100px);
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateY(0)';
+                notification.style.opacity = '1';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateY(100px)';
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
